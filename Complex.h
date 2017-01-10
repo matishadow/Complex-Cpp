@@ -3,6 +3,7 @@
 
 #include <type_traits>
 #include <cmath>
+#include "Square.h"
 
 template<typename T,
         T real,
@@ -27,7 +28,7 @@ public:
 private:
     T Imaginary;
     T Real;
-    T Abs = sqrt(real * real + imaginary * imaginary);
+    T Abs = sqrt(Square<real>::value + Square<imaginary>::value);
 };
 
 
