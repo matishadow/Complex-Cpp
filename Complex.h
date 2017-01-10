@@ -2,15 +2,14 @@
 #define COMPLEX_CPP_COMPLEX_H
 
 #include <type_traits>
+#include <cmath>
 
 template<typename T,
-        T real = 0,
-        T imaginary = 0,
+        T real,
+        T imaginary,
         typename = typename std::enable_if<std::is_arithmetic<T>::value, T>::type>
 class Complex {
 public:
-    Complex(T Real, T Imaginary) : Real(Real), Imaginary(Imaginary) {}
-
     Complex() : Real(real), Imaginary(imaginary) {}
 
     T getImaginary() const {
@@ -21,9 +20,14 @@ public:
         return Real;
     }
 
+    T getAbs() const {
+        return Abs;
+    }
+
 private:
     T Imaginary;
     T Real;
+    T Abs = sqrt(real * real + imaginary * imaginary);
 };
 
 
