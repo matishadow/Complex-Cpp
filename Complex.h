@@ -1,7 +1,10 @@
 #ifndef COMPLEX_CPP_COMPLEX_H
 #define COMPLEX_CPP_COMPLEX_H
 
-template<typename T>
+#include <type_traits>
+
+template<typename T,
+        typename = typename std::enable_if<std::is_arithmetic<T>::value, T>::type>
 class Complex {
 public:
     Complex(T Real, T Imaginary) : Real(Real), Imaginary(Imaginary) {}
