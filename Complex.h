@@ -25,10 +25,15 @@ public:
         return Abs;
     }
 
+
+    constexpr double calculateAbs(){
+        return sqrt(Square<T, real>::value + Square<T, imaginary>::value);
+    }
+
 private:
     T Imaginary;
     T Real;
-    double Abs = sqrt(Square<T, real>::value + Square<T, imaginary>::value);
+    double Abs = calculateAbs();
 };
 
 
