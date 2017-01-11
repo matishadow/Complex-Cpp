@@ -4,6 +4,7 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/Square.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/DisplayMode.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Complex.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Square.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Complex.h" isTestSource="false" />
