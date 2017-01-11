@@ -21,14 +21,14 @@ public:
         return Real;
     }
 
-    T getAbs() const {
+    double getAbs() const {
         return Abs;
     }
 
 private:
     T Imaginary;
     T Real;
-    T Abs = sqrt(Square<T, real>::value + Square<T, imaginary>::value);
+    double Abs = sqrt(Square<T, real>::value + Square<T, imaginary>::value);
 };
 
 
