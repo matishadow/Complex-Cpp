@@ -28,7 +28,7 @@ public:
 private:
     T Imaginary;
     T Real;
-    T Abs = sqrt(Square<real>::value + Square<imaginary>::value);
+    T Abs = sqrt(Square<T, real>::value + Square<T, imaginary>::value);
 };
 
 
