@@ -43,6 +43,16 @@ public:
         return std::complex<double>(real, imaginary);
     }
 
+    std::complex<double> operator+(std::complex<double> a) {
+        std::complex<double> b = *this;
+        return a + b;
+    }
+
+    std::complex<double> operator*(std::complex<double> a) {
+        std::complex<double> b = *this;
+        return a * b;
+    }
+
     constexpr double calculateAbs(){
         return sqrt(Square<T, real>::value + Square<T, imaginary>::value);
     }
