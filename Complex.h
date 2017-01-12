@@ -3,11 +3,16 @@
 
 #include <type_traits>
 #include <cmath>
+#include <complex>
 #include "Square.h"
+enum cast_t {
+    real_cast, imaginary_cast
+};
 
 template<typename T,
         T real,
         T imaginary,
+        cast_t cast_type,
         typename = typename std::enable_if<std::is_arithmetic<T>::value, T>::type>
 class Complex {
 public:
@@ -25,6 +30,18 @@ public:
         return Abs;
     }
 
+    explicit operator T() const {
+        switch (cast_type) {
+            case real_cast:
+                return real;
+            case imaginary_cast:
+                return imaginary;
+        }
+    }
+
+    operator std::complex<double>() const {
+        return std::complex<double>(real, imaginary);
+    }
 
     constexpr double calculateAbs(){
         return sqrt(Square<T, real>::value + Square<T, imaginary>::value);
